@@ -1,0 +1,85 @@
+@import "../components/mixins";
+
+.hero {
+    margin-top: 140px;
+    background-image: url(../../assets/images/hero_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    padding: 117px 85px;
+
+    &__content {
+        max-width: 493px;
+        transition: 0.5s;
+        animation: hero-content 2s 1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+        opacity: 0;
+
+        &:hover {
+            animation-play-state: paused;
+        }
+
+        &-title {
+            font-size: 72px;
+            line-height: 72px;
+            font-weight: 900;
+            font-family: $font-fraunces;
+            color: $main-white-text-color;
+        }
+
+        &-subtitle {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 26px;
+            font-family: $font-barlow;
+            color: $main-white-text-color;
+            opacity: 80%;
+            margin: 32px 0 56px 0;
+        }
+
+        &-btn {
+            @include button;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        max-width: 768px;
+        padding: 104px 58px;
+        background-position: center center;
+
+        &__content {
+            max-width: 398px;
+
+            &-title {
+                font-size: 48px;
+                line-height: 48px;
+            }
+
+            &-subtitle {
+                font-size: 15px;
+                line-height: 25px;
+                margin: 24px 0 40px;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        max-width: 576px;
+        padding: 100px 24px;
+        background-position: center center;
+
+        &__content {
+            max-width: 279px;
+            margin: 0 auto;
+            text-align: center;
+
+            &-title {
+                font-size: 40px;
+                line-height: 40px;
+            }
+        }
+    }
+}

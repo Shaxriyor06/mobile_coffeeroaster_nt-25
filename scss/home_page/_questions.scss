@@ -1,0 +1,181 @@
+@import "../components/mixins";
+
+.questions {
+    margin: 300px 0;
+
+    &__content {
+        max-width: 760px;
+        padding-top: -50px;
+
+        &-text {
+            font-size: 24px;
+            line-height: 32px;
+            color: #83888f;
+            font-family: $font-fraunces;
+            font-weight: 900;
+        }
+
+        &-select {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            position: relative;
+
+            &-line {
+                max-width: 760px;
+                border: 2px solid #fdd6ba;
+                border-radius: 10px;
+            }
+
+            &-circle {
+                display: inline-block;
+                width: 31px;
+                height: 31px;
+                border-radius: 50%;
+                border: 1px solid #0e8784;
+                background-color: $main-white-text-color;
+                position: absolute;
+                left: -15px;
+                top: -15px;
+                transition: 0.5s;
+
+                &:hover {
+                    background-color: #0e8784;
+                }
+            }
+
+            .questions__content-select_line-circle--first {
+                left: 745px;
+            }
+            .questions__content-select_line-circle--second {
+                left: 365px;
+            }
+        }
+    }
+
+    &__cards {
+        margin-top: 82px;
+        display: flex;
+        align-items: flex-start;
+        gap: 95px;
+
+        &-one {
+            max-width: 260px;
+            transition: 2s;
+
+            &:hover {
+                transform: rotateY(360deg);
+            }
+
+            &-number {
+                font-size: 72px;
+                line-height: 72px;
+                font-family: $font-fraunces;
+                font-weight: 900;
+                color: #fdd6ba;
+            }
+
+            &-title {
+                @include h2-titles;
+                font-size: 32px;
+                line-height: 36px;
+                color: $main-dark-text-color;
+                margin: 38px 0 42px 0;
+            }
+
+            &-subtitle {
+                @include p-subtitles;
+                color: $main-dark-text-color;
+                opacity: 80%;
+            }
+        }
+    }
+
+    &__btn {
+        @include button;
+        margin-top: 64px;
+    }
+}
+
+@media (max-width: 768px) {
+    .questions {
+        padding: 70px 40px;
+
+        &__content {
+            &-select {
+                position: relative;
+
+                &-line {
+                    max-width: 467px;
+                    height: 2px;
+                }
+
+                &-circle {
+                    position: absolute;
+                }
+                .questions__content-select_line-circle--first {
+                    left: 235px;
+                }
+                .questions__content-select_line-circle--second {
+                    left: 464px;
+                }
+            }
+        }
+
+        &__cards {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            align-content: flex-start;
+
+            &-one {
+                min-width: 223px;
+
+                &-title {
+                    min-width: 223px;
+                    font-size: 28px;
+                    line-height: 32px;
+                }
+
+                &-subtitle {
+                    max-width: 220px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .questions {
+        padding: 340px 24px;
+
+        &__content {
+            text-align: center;
+
+            &-select {
+                display: none;
+            }
+        }
+
+        &__cards {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 56px;
+            text-align: center;
+
+            &-one {
+                max-width: 327px;
+
+                &-title {
+                    margin: 24px auto;
+                    width: 100%;
+                }
+            }
+        }
+
+        &__btn {
+            margin: 80px 135px;
+        }
+    }
+}

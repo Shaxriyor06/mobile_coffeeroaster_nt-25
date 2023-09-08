@@ -1,0 +1,64 @@
+@mixin item_transition {
+    transition: 0.5s;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    &:active {
+        transform: scale(0.9);
+    }
+}
+
+@mixin button {
+    width: 217px;
+    background-color: #66d2cf;
+    border-radius: 8px;
+    color: $main-white-text-color;
+    font-family: $font-fraunces;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 25px;
+    padding: 15px 31px;
+    border: 1px solid transparent;
+    transition: 0.5s;
+
+    &:hover {
+        transform: scale(1.1);
+        background-color: $main-white-text-color;
+        color: #66d2cf;
+        border: 1px solid #66d2cf;
+    }
+
+    &:active {
+        transform: scale(0.8);
+    }
+}
+
+@mixin h2-titles {
+    font-size: 40px;
+    line-height: 48px;
+    font-family: $font-fraunces;
+    font-weight: 900;
+    color: $main-white-text-color;
+}
+
+@mixin p-subtitles {
+    font-size: 16px;
+    font-family: $font-barlow;
+    font-weight: 400;
+    line-height: 26px;
+    color: $main-white-text-color;
+    opacity: 80%;
+}
+
+@keyframes hero-content {
+    0% {
+        transform: translateY(120px);
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

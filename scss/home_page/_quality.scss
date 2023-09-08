@@ -1,0 +1,171 @@
+@import "../components/mixins";
+
+.quality {
+    padding: 100px 0 317px 0;
+    background-color: #282f38;
+    border-radius: 8px;
+    position: relative;
+
+    &__content {
+        max-width: 540px;
+        margin: 0 auto;
+        text-align: center;
+
+        &-title {
+            @include h2-titles;
+        }
+
+        &-subtitle {
+            @include p-subtitles;
+            margin-top: 32px;
+        }
+    }
+
+    &__cards {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        position: absolute;
+        bottom: -151px;
+        left: 85px;
+
+        &-one {
+            min-width: 350px;
+            background-color: #0e8784;
+            border-radius: 8px;
+            padding: 72px 48px 48px 48px;
+            text-align: center;
+            border: none;
+            transition: 0.5s;
+            animation: hero-content 3s 1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+            opacity: 0;
+
+            &:hover {
+                background-color: $main-white-text-color;
+
+                & h4 {
+                    color: $main-dark-text-color;
+                }
+
+                & p {
+                    color: $main-dark-text-color;
+                }
+            }
+
+            &-image {
+                margin-bottom: 22px;
+            }
+
+            &-content {
+                max-width: 255px;
+
+                &-title {
+                    @include h2-titles;
+                    margin: 56px 0 24px 0;
+                    font-size: 24px;
+                    line-height: 32px;
+                }
+
+                &-subtitle {
+                    @include p-subtitles;
+                }
+            }
+        }
+
+        &-one--second {
+            animation: hero-content 3s 2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+            opacity: 0;
+        }
+
+        &-one--third {
+            animation: hero-content 3s 3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+            opacity: 0;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .quality {
+        padding: 56px 0 368px 0;
+        position: relative;
+
+        &__content {
+            max-width: 540px;
+
+            &-title {
+                font-size: 32px;
+            }
+        }
+
+        &__cards {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            position: absolute;
+            bottom: -300px;
+            left: 57px;
+            right: 58px;
+
+            &-one {
+                max-width: 573px;
+                height: 180px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 55px;
+
+                &-content {
+                    max-width: 344px;
+                    text-align: start;
+                    margin-top: -20px;
+
+                    &-title {
+                        margin: 0 0 16px 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .quality {
+        padding: 64px 24px 661px 24px;
+
+        &__content {
+            max-width: 279px;
+
+            &-title {
+                font-size: 28px;
+                line-height: 28px;
+            }
+
+            &-subtitle {
+                margin-top: 24px;
+                font-size: 15px;
+                line-height: 25px;
+            }
+        }
+
+        &__cards {
+            position: absolute;
+            bottom: -600px;
+            left: 24px;
+            right: 24px;
+
+            &-one {
+                max-width: 279px;
+                height: 382px;
+                display: flex;
+                flex-direction: column;
+
+                &-content {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

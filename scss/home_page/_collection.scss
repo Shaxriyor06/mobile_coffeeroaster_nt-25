@@ -1,0 +1,98 @@
+.collection {
+    margin: 136px auto;
+    background-image: url(../../assets/images/collection-bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 10px -70px;
+    padding-top: 126px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__card {
+        max-width: 255px;
+        text-align: center;
+        border-radius: 8px;
+        transition: 0.5s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &:active {
+            transform: scale(0.9);
+        }
+
+        &-content {
+            max-width: 255px;
+
+            &-title {
+                font-size: 24px;
+                font-family: $font-fraunces;
+                font-weight: 900;
+                line-height: 32px;
+                color: $main-dark-text-color;
+                margin: 71px 0 24px 0;
+            }
+
+            &-subtitle {
+                font-size: 16px;
+                line-height: 26px;
+                font-family: $font-barlow;
+                font-weight: 400;
+                color: $main-dark-text-color;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .collection {
+        background-position-y: 20px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 32px;
+
+        &__card {
+            max-width: 573px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &-content {
+                margin-top: -90px;
+                max-width: 282px;
+                text-align: start;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .collection {
+        margin: 120px auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 48px;
+
+        &__card {
+            max-width: 282px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            &-content {
+                margin: -24px 0 0 0;
+                text-align: center;
+
+                &-subtitle {
+                    margin-top: -16px;
+                }
+            }
+        }
+    }
+}

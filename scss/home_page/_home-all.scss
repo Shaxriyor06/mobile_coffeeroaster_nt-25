@@ -1,0 +1,17 @@
+@import "./header";
+@import "./hero";
+@import "./collection";
+@import "./quality";
+@import "./questions";
+@import "./footer";
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    .hero {
+        background-image: url("../../assets/images/hero_bg-2x.jpg");
+    }
+}

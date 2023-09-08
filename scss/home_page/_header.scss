@@ -1,0 +1,101 @@
+@import "../components/mixins";
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $main-white-text-color;
+    width: 100%;
+    z-index: 5;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0;
+
+    &__logo {
+        @include item_transition;
+    }
+
+    &__menu {
+        display: flex;
+        align-items: center;
+        gap: 33px;
+
+        &-link {
+            text-decoration: none;
+            color: $main-grey-text-color;
+            text-transform: uppercase;
+            font-size: 12px;
+            line-height: 15px;
+            font-family: $font-barlow;
+            font-weight: 800;
+
+            &:hover {
+                color: $main-dark-text-color;
+            }
+        }
+    }
+
+    &__burger {
+        display: none;
+    }
+
+    &__remove {
+        display: none;
+    }
+
+    &__checkbox {
+        display: none;
+
+        &:checked ~ .navbar__remove {
+            display: block;
+        }
+
+        &:checked ~ .navbar__burger {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar {
+        &__menu {
+            width: 100%;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            row-gap: 32px;
+            background-color: #fff;
+            position: fixed;
+            top: 20%;
+            left: 0;
+            z-index: 2;
+            transition: 0.5s linear;
+            transform: translateX(120%);
+            visibility: hidden;
+
+            &-link {
+                text-transform: capitalize;
+                font-size: 24px;
+                line-height: 32px;
+                font-family: $font-fraunces;
+                font-weight: 900;
+                color: $main-dark-text-color;
+            }
+        }
+
+        &__burger {
+            display: block;
+        }
+
+        &__checkbox:checked + .navbar__menu {
+            transform: translateX(0);
+            visibility: visible;
+        }
+    }
+}
